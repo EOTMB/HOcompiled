@@ -18,6 +18,6 @@ Las funciones en el codigo Assembler estan identificadas por su nombre seguido d
 Los simbolos en este objeto indican las variables y funciones existentes dentro del objeto, con la posiciones de memoria del comienzo de donde estan almacenadas. Este objeto tiene 3 simbolos: add_numbers y main, con el descriptor T, indicando que se encuentran en la seccion de texto(codigo), lo que significa que son funciones. El hecho de que la T este en mayuscula indica que se puede acceder a las funciones desde fuera del objeto. El simbolo restante, printf, tiene U como descriptor, indicando que es indefinido (Undefined), lo que indica que se define fuera del archivo y se definira luego del linkeo
 
 #5
-Los simbolos del ejecutable incluyen variables y funciones relativas al sistema operativo, de manera que este pueda ejecutar las instrucciones y acceder a las variables definidas en el mismo
+Los simbolos del ejecutable incluyen variables y funciones relativas al sistema operativo, de manera que este pueda ejecutar las instrucciones y acceder a las variables definidas en el mismo. Las posiciones de memoria de los ojetos previos cambian, las funciones definidas en librerias estaticas pasan de U al tipo correspondiente y las funciones dinamicas aparecen aun sin definir pero con la referencia necesaria para que puedan ser alcanzadas
 
 
