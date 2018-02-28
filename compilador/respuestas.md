@@ -9,7 +9,7 @@
 - Luego de realizar el linkeo, espero que el compilador devuelva un archivo ejecutable que pueda ser utilizado por el sistema operativo
 
 #2
-El preprocesador declara todas las referencias a funciones, variables y definiciones de tipos de otras librerias incluidas en los headers de manera que el linkeador sepa a que objetos debe hacer referencia en el ultimo paso de la creacion del ejecutable. Las directivas # que quedan en el archivo marcan las lineas de entrada y salida a cada archivo realizadas en este paso
+El preprocesador declara todas las referencias a funciones, variables y definiciones de tipos de otras librerias incluidas en los headers de manera que el linkeador sepa a que objetos debe hacer referencia en el ultimo paso de la creacion del ejecutable. Las directivas # que quedan en el archivo marcan las lineas de las entradas y salidas a cada archivo realizadas en este paso
 
 #3
 Las funciones en el codigo Assembler estan identificadas por su nombre seguido de el tag .LFB. Las funciones en este archivo son main y add_numbers 
