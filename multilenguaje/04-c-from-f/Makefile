@@ -1,35 +1,16 @@
-.PHONY: default help object executable all clean
-FC = gfortran
+.PHONY: all clean
+all: f-main.e
 
-LD = $(FC)
+f-main.e: f-main.o c-sum.o
+	gcc $^ -o $@ -lgfortran 
 
-SOURCE_F = $(wildcard *.f90)
-OBJECTS_F = $(patsubst %.f90, %_f90.o, $(SOURCE_F))
+f-main.o: f-main.f90
+	gcc -c $<
 
-EXECUTABLE = f-main.e
-
-default: help
-
-help:
-	@echo "\
-Options:\n\n\
-  make objects:       compiler makes objects for every *.c and *.f90\n\
-  make executable:    compiler makes executable\n\
-  make all:           build all previous\n\
-  make clean:         delete output files\n\
-  make help:          display this help"
-
-objects: $(OBJECTS_F)
-
-executable: $(EXECUTABLE)
-
-all: objects executable
-
-%_f90.o: %.f90
-	$(FC) -c $^ -o $@
-
-%.e: $(OBJECTS_F)
-	$(LD) $^ -o $@
+c-sum.o: c-sum.h c-sum.c
+	gcc -c $<
 
 clean:
-	rm -rfv $(OBJECTS_F) $(EXECUTABLE)
+	rm -rfv f-main.o c-sum.o f-main.e
+
+
